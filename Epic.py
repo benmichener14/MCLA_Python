@@ -17,3 +17,10 @@ def printList(list):
         print list[i]
         i = i + 1
         
+# Converts File to List
+def fileToList(file):
+    values = []
+    data = open(file)
+    for line in data:
+        values.append(line.strip())
+    return values
