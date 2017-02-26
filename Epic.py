@@ -24,3 +24,9 @@ def fileToList(file):
     for line in data:
         values.append(line.strip())
     return values
+
+# Converts User Inputs to List
+def userList(prompt):
+    print prompt
+    l = raw_input().split(",")
+    return l
