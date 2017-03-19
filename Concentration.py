@@ -1,6 +1,17 @@
+#************************************************
+#   Ben Michener
+#   3/19/2017
+#   Intro to Python
+#   Exam  (Concentration.py)
+#************************************************
 import Epic
 import random
 import time
+
+#************************************************
+#   Randomizes the given list and creates the one duplicate card
+#   for the game, setting up and returning the playing board
+#************************************************
 
 def randomize(cardList):
     index = random.randrange(0, 8)
@@ -8,6 +19,14 @@ def randomize(cardList):
     random.shuffle(cardList)
     return cardList
     
+#************************************************
+#   Runs the game, asking the user to pick two cards and
+#   comparing to see if they are a matching pair. Keeps track
+#   of and returns the number of tries it took to get the matching pair.
+#   Also checks to see if the numbers are out of bounds and if the
+#   user tried to pick two of the same number
+#************************************************
+
 def gameRun(randomizedList):
     win = False
     turns = 1
@@ -28,6 +47,12 @@ def gameRun(randomizedList):
         else:
             turns = turns + 1
     return turns
+    
+#************************************************
+#   Plays a game of concentration with the user, with
+#   one correct matching pair. Gives a rating to the user based
+#   on how long it took to find the correct pair.
+#************************************************
     
 def main():
     cardList = ["bird", "dog", "snake", "fish", "cat", "mouse", "starfish", "woodchuck", "crab"]
