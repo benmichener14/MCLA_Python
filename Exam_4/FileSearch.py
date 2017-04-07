@@ -19,8 +19,8 @@ def readFiles():
         if ".txt" in name:
             fileList[name] = []
             for line in open(name):
-                temp = line.split("\n")
-                fileList[name].append(temp[0].strip().upper())
+                temp = line
+                fileList[name].append(temp.strip().upper())
     return fileList
             
 #************************************************
@@ -33,10 +33,13 @@ def readFiles():
 def fileContains(fileList, word):
     counter = 0
     for fileName in fileList.keys():
+        print fileName
         for line in fileList[fileName]:
+            print line
             if word in line:
                 print "%s: %s" % (fileName, line)
                 counter = counter + 1
+                print counter
     return counter
 
 #************************************************
